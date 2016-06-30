@@ -44,23 +44,30 @@ int main(int argc, const char * argv[]) {
             if([playerCommand isEqual:@"roll"]){
                 NSLog(@"lets play");
                 
-                [dice1 randomizeValue];
-                [dice2 randomizeValue];
-                [dice3 randomizeValue];
-                [dice4 randomizeValue];
-                [dice5 randomizeValue];
+                [playersDicelist rollDice];
                 
-                [dice1 printValue];
-                [dice2 printValue];
-                [dice3 printValue];
-                [dice4 printValue];
-                [dice5 printValue];
+//                [dice1 randomizeValue];
+//                [dice2 randomizeValue];
+//                [dice3 randomizeValue];
+//                [dice4 randomizeValue];
+//                [dice5 randomizeValue];
+//                
+//                [dice1 printValue];
+//                [dice2 printValue];
+//                [dice3 printValue];
+//                [dice4 printValue];
+//                [dice5 printValue];
                 
                 diceIndex = [userInput inputForPrompt:@"Choose the dice to hold"];
                 NSInteger chosenDice = diceIndex.integerValue;
                 
                 [playersDicelist holdDiceAtIndex:chosenDice];
-                [playersDicelist printList];
+                [playersDicelist scoreCard];
+//                [playersDicelist printList];
+            }else if([playerCommand isEqual:@"reset"]){
+                [playersDicelist resetDice];
+                [playersDicelist scoreCard];
+                NSLog(@"Successfully Reseted!!");
             }
         }
         

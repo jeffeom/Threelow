@@ -12,10 +12,13 @@
 @interface DiceList : NSObject
 
 @property NSMutableArray *usersDices;
-@property NSMutableArray *collectionOfHeldDice;
+@property NSMutableSet *collectionOfHeldDice;
 
+-(void)rollDice;
 -(void)addDice:(Dice *)playerdice;
 -(void)holdDiceAtIndex:(NSInteger)index;
+-(void)resetDice;
 -(void)printList;
+-(void)scoreCard;
 
 @end
